@@ -62,7 +62,6 @@ class TogglAPI:
                 'items': list(map(lambda y: {'title': y['title']['time_entry'], 'time': y['time']}, n['items']))
             }
         total = list(map(get_total, json_r['data']))
-        create_graph(total)
         total_text = ""
         for t in total:
             item_text = ""

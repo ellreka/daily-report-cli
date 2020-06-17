@@ -21,8 +21,6 @@ class SlackAPI:
         assert response["file"]
 
     def post_times(self, text, today):
-        print(self.times_channel)
-        print(text)
         client = WebClient(self.token)
         response = client.chat_postMessage(
             channel=self.times_channel,
@@ -35,6 +33,7 @@ class SlackAPI:
                 "token": self.token,
                 "profile": json.dumps({
                     "status_text": current['description'],
+                    "status_emoji": ':dart:'
                 })
             }
             requests.post('https://slack.com/api/users.profile.set', params=params)
