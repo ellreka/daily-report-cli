@@ -1,0 +1,9 @@
+{
+  "extends": "@ellreka/configs/tsconfig.json",
+  "include": ["src"],
+  "exclude": [],
+  "compilerOptions": {
+    "module": "es2020",
+    "target": "ES2015",
+  }
+}

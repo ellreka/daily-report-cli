@@ -1,0 +1,22 @@
+{
+  "name": "daily-report-cli",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:ellreka/daily-report-cli.git",
+  "author": "ellreka <ellreka5364@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "tsc -w src/index.ts --outDir build"
+  },
+  "devDependencies": {
+    "@ellreka/configs": "^1.1.1",
+    "@types/inquirer": "^7.3.1",
+    "@types/node-fetch": "^2.5.7",
+    "date-fns": "^2.16.1",
+    "eslint": "^7.10.0",
+    "inquirer": "^7.3.3",
+    "node-fetch": "^2.6.1",
+    "prettier": "^2.1.2",
+    "typescript": "^4.0.3"
+  }
+}
