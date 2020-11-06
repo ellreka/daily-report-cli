@@ -7,7 +7,6 @@ const toggl = new Toggl()
 const slack = new Slack()
 
 async function app(): Promise<void> {
-  // await slack.postDailyReports()
   await Promise.all([toggl.getReports(), toggl.getTotal()]).then(
     async (res) => {
       const thoughtsText = '【思ったこと】\n\n'
@@ -19,8 +18,8 @@ async function app(): Promise<void> {
           type: 'editor',
           default: thoughtsText + tasksText + reportsText
         })
-        .then((ans) => {
-          console.log(ans)
+        .then(async (ans) => {
+          await slack.postDailyReports(Object.values(ans)[0])
         })
         .catch((err) => {
           console.log(err)

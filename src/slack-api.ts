@@ -1,33 +1,23 @@
-import fetch, { Headers } from 'node-fetch'
+import { WebClient } from '@slack/web-api'
 
 import { config } from './config'
 
 export default class Slack {
-  slack_token = config().toggl_api_token
+  slack_token = config().slack_token
   slack_channel = config().slack_channel
   slack_times_channel = config().slack_times_channel
 
-  async postDailyReports(): Promise<void> {
-    const headers = new Headers({
-      Authorization:
-        'Bearer " ' + Buffer.from(`${this.slack_token}`).toString('base64')
-    })
-
+  async postDailyReports(content: string): Promise<void> {
+    const web = new WebClient(this.slack_token)
     const today = new Date().toISOString()
-
-    const params = {
+    const params: { [key: string]: string } = {
       channels: this.slack_channel,
       title: `【日報】${today}`,
-      content: 'aaaaa',
+      content,
       filetype: 'post'
     }
     try {
-      const response = await fetch('https://slack.com/api/files.upload', {
-        method: 'POST',
-        headers,
-        body: JSON.stringify(params)
-      })
-      console.log(response)
+      await web.files.upload(params)
     } catch (err) {
       console.log(err)
     }

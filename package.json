@@ -10,10 +10,12 @@
   },
   "devDependencies": {
     "@ellreka/configs": "^1.1.1",
+    "@slack/web-api": "^5.12.0",
     "@types/inquirer": "^7.3.1",
     "@types/node-fetch": "^2.5.7",
     "date-fns": "^2.16.1",
     "eslint": "^7.10.0",
+    "form-data": "^3.0.0",
     "inquirer": "^7.3.3",
     "node-fetch": "^2.6.1",
     "prettier": "^2.1.2",
