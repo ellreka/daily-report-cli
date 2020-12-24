@@ -2,11 +2,10 @@
 
 ## setup
 
-```bash
-yarn
-yarn dev
-node build/index.js
-```
+1. create `.env.json`
+2. `yarn`
+3. `yarn dev`
+4. `node build/index.js`
 
 ### .env.json
 
@@ -19,22 +18,4 @@ node build/index.js
   "slack_channel": "xXxXxXxXxXxXx",
   "slack_times_channel": "xXxXxXxXxXxXx"
 }
-```
-
-## use
-
-### post daily report
-
-```bash
-daily-report
-```
-
-## options
-
-```bash
-  -h, --help            show this help message and exit
-  -m MESSAGE [MESSAGE ...], --message MESSAGE [MESSAGE ...]
-  -n NEXT [NEXT ...], --next NEXT [NEXT ...]
-  -d DID [DID ...], --did DID [DID ...]
-  -t, --times
 ```
